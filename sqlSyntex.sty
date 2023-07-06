@@ -1,0 +1,33 @@
+\ProvidesPackage{sqlSyntex}
+% Define the SQL language syntax highlighting
+\renewcommand{\lstlistingname}{SQL}
+\lstdefinelanguage{SQL}{
+  keywords={SELECT, FROM, WHERE, GROUP, BY, HAVING, ORDER, JOIN, ON, AS, AND, OR, NOT, NULL, INSERT, INTO, VALUES, UPDATE, SET, DELETE, FROM},
+  keywordstyle=\color{blue},
+  sensitive=true,
+  comment=[l]{--},
+  morestring=[b]',
+  morestring=[b]",
+  stringstyle=\color{orange},
+  morecomment=[s]{/*}{*/},
+  morecomment=[l]{//},
+  commentstyle=\color{gray},
+}
+
+% Set the default style for SQL code
+\lstset{
+  language=SQL,
+  basicstyle=\ttfamily\small,
+  showstringspaces=false,
+  breaklines=true,
+  numbers=left,
+  numberstyle=\scriptsize\color{black},
+  stepnumber=1,
+  numbersep=10pt,
+  tabsize=4,
+  frame=single,
+  frameround=tttt,
+  backgroundcolor=\color{white},
+  captionpos=b
+}
+\endinput
