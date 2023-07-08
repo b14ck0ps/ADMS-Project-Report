@@ -1,0 +1,52 @@
+\subsection{\texorpdfstring{\centering (SocialMedia $\rightarrow$ ContentCreator)}{ (ContentCreator-SocialMedia)}}
+
+\subsection*{\underline{UNF}}
+
+(\underline{SocialMedia\_ID}, SocialMedia\_Name, SocialMedia\_Email, SocialMedia\_Password, SocialMedia\_Picture, SocialMedia\_Phone , SocialMedia\_Hiredate , SocialMedia\_Salary,\\
+\underline{ContentCreator\_ID}, ContentCreator\_Name, ContentCreator\_Email, ContentCreator\_Password, ContentCreator\_Picture, ContentCreator\_Phone , ContentCreator\_Hiredate , ContentCreator\_Salary,
+ContentCreator\_Facebook\_Link, ContentCreator\_Twitter\_Link, ContentCreator\_\\Instagram\_Link, ContentCreator\_Youtube\_Link ,
+ContentCreator\_Country, ContentCreator\_City, ContentCreator\_Street, ContentCreator\_Zip\_Code)
+
+\subsection*{\underline{1NF}}
+Phone is multi-valued attribute.
+\vskip 0.2in
+
+\begin{itemize}
+    \item
+          (\underline{SocialMedia\_ID}, SocialMedia\_Name, SocialMedia\_Email, SocialMedia\_Password, SocialMedia\_Picture, SocialMedia\_Phone , SocialMedia\_Hiredate , SocialMedia\_Salary,
+          \underline{ContentCreator\_ID}, ContentCreator\_Name, ContentCreator\_Email, ContentCreator\_Password, ContentCreator\_Picture, ContentCreator\_Phone , ContentCreator\_Hiredate , ContentCreator\_Salary,
+          ContentCreator\_Facebook\_Link, ContentCreator\_Twitter\_Link, ContentCreator\_\\Instagram\_Link, ContentCreator\_Youtube\_Link ,
+          ContentCreator\_Country, ContentCreator\_City, ContentCreator\_Street, ContentCreator\_Zip\_Code)
+\end{itemize}
+
+
+\subsection*{\underline{2NF}}
+\begin{itemize}
+    \item \textbf{SocialMedia} (\underline{SocialMedia\_ID}, SocialMedia\_Name, SocialMedia\_Email, SocialMedia\_Password, SocialMedia\_Picture, SocialMedia\_Phone , SocialMedia\_Hiredate , SocialMedia\_Salary)
+    \item \textbf{ContentCreator} (\underline{ContentCreator\_ID}, ContentCreator\_Name, ContentCreator\_Email, ContentCreator\_Password, ContentCreator\_Picture, ContentCreator\_Phone , ContentCreator\_Hiredate , ContentCreator\_Salary,
+          ContentCreator\_Facebook\_Link, ContentCreator\_Twitter\_Link, ContentCreator\_\\Instagram\_Link, ContentCreator\_Youtube\_Link ,
+          ContentCreator\_Country, ContentCreator\_City, ContentCreator\_Street, ContentCreator\_Zip\_Code)
+\end{itemize}
+
+\subsection*{\underline{3NF}}
+
+\begin{itemize}
+    \item \textbf{SocialMedia} \underline{SocialMedia\_ID}, SocialMedia\_Name, SocialMedia\_Email, SocialMedia\_Password, SocialMedia\_Picture , SocialMedia\_Hiredate , SocialMedia\_Salary)
+    \item \textbf{ContentCreator} \underline{ContentCreator\_ID}, ContentCreator\_Name, ContentCreator\_Email, ContentCreator\_Password, ContentCreator\_Picture , ContentCreator\_Hiredate , ContentCreator\_Salary)
+    \item \textbf{ContentCreator\_SocialMedia} (\textbf{ContentCreator\_ID}, \textbf{SocialMedia\_ID} , ContentCreator\_Facebook\_Link, ContentCreator\_Twitter\_Link, ContentCreator\_\\Instagram\_Link, ContentCreator\_Youtube\_Link)
+    \item \textbf{ContentCreator\_Address} (\textbf{ContentCreator\_ID}, ContentCreator\_Country, ContentCreator\_City, ContentCreator\_Street, ContentCreator\_Zip\_Code)
+\end{itemize}
+
+\subsection*{\underline{Table after Normalization}}
+\begin{itemize}
+    \item \textbf{SocialMedia} (\underline{SocialMedia\_ID}, SocialMedia\_Name, SocialMedia\_Email, SocialMedia\_Password, SocialMedia\_Picture , SocialMedia\_Hiredate , SocialMedia\_Salary)
+    \item \textbf{ContentCreator} (\underline{ContentCreator\_ID}, ContentCreator\_Name, ContentCreator\_Email, ContentCreator\_Password, ContentCreator\_Picture , ContentCreator\_Hiredate , ContentCreator\_Salary)
+    \item \textbf{ContentCreator\_SocialMedia} (\textbf{ContentCreator\_ID} , ContentCreator\_Facebook\_Link, ContentCreator\_Twitter\_Link, ContentCreator\_\\Instagram\_Link, ContentCreator\_Youtube\_Link)
+    \item \textbf{ContentCreator\_Address} (\underline{A\_ID}, \textbf{ContentCreator\_ID}, ContentCreator\_Country, ContentCreator\_City, ContentCreator\_Street, ContentCreator\_Zip\_Code)
+    \item \textbf{ContentCreator\_Phone} (\underline{CCP\_ID}, \textbf{ContentCreator\_ID}, ContentCreator\_Phone)
+    \item \textbf{SocialMedia\_Phone} (\underline{SMP\_ID}, \textbf{SocialMedia\_ID}, SocialMedia\_Phone)
+    \item \textbf{ContentCreator\_SocialMedia\_Phone} (\underline{CCP\_ID}, \textbf{ContentCreator\_ID}, ContentCreator\_Phone)
+
+\end{itemize}
+
+\clearpage
