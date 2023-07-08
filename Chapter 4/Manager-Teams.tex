@@ -1,0 +1,36 @@
+\section{\texorpdfstring{\centering Handel branch (Manager-Teams)}{Supervise branch (Manager-Teams)}}
+
+\subsection*{\underline{UNF}}
+
+(
+\underline{Manag\\er\_ID}, Manager\_Name, Manager\_Email, Manager\_Password,Manager\_Picture, Manager\_Hiredate, Manager\_Phone,
+\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Total\_Price\_Money,Team\_Winnig
+)
+
+\subsection*{\underline{1NF}}
+
+Winning \& Phone are multi-valued attribute.
+\vskip 0.2in
+\begin{itemize}
+    \item
+          (\underline{Manager\_ID}, Manager\_Name, Manager\_Email, Manager\_Password,Manager\_Picture, Manager\_Hiredate, Manager\_Phone,
+          \underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Team\_Total\_Price\_Money,Team\_Winnig)
+\end{itemize}
+
+\subsection*{\underline{2NF}}
+No partial dependency found.
+\begin{itemize}
+    \item \textbf{Manager}(\underline{Manager\_ID}, Manager\_Name, Manager\_Email, Manager\_Password,Manager\_Picture, Manager\_Hiredate, Manager\_Phone)
+    \item \textbf{Team}(\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date,Total\_Price\_Money,Team\_country)
+\end{itemize}
+
+\subsection*{\underline{3NF}}
+No transitive dependency found.Same as 2NF.
+
+\subsection*{\underline{Table after Normalization}}
+\begin{itemize}
+    \item \textbf{Manager}(\underline{Manager\_ID}, Manager\_Name, Manager\_Email, Manager\_Password,\\Manager\_Picture, Manager\_Hiredate)
+    \item \textbf{Team}(\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,\\Total\_Price\_Money)
+    \item \textbf{Manager\_Team}(\underline{Team\_ID}, Team\_Winnig)
+    \item \textbf{Manager\_Phone}(\underline{Manager\_ID}, Manager\_Phone)
+\end{itemize}
