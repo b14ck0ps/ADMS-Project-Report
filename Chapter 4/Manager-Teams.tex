@@ -30,8 +30,8 @@ No transitive dependency found.Same as 2NF.
 \subsection*{\underline{Table after Normalization}}
 \begin{itemize}
     \item \textbf{Manager}(\underline{Manager\_ID}, Manager\_Name, Manager\_Email, Manager\_Password,\\Manager\_Picture, Manager\_Hiredate)
-    \item \textbf{Team}(\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,\\Total\_Price\_Money)
-    \item \textbf{Manager\_Team}(\underline{Team\_ID}, Team\_Winnig)
-    \item \textbf{Manager\_Phone}(\underline{Manager\_ID}, Manager\_Phone)
+    \item \textbf{Team}(\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,\\Total\_Price\_Money, \textbf{Manager\_ID}
+    \item \textbf{Team\_Winnig}(\textbf{Team\_ID}, Team\_Winnig)
+    \item \textbf{Manager\_Phone} (\textbf{Manager\_ID},{Manager\_Phone})
 \end{itemize}
 \clearpage
