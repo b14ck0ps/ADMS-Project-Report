@@ -7,29 +7,30 @@
 \subsection*{\underline{1NF}}
 Phone is multi-valued attribute.
 \vskip 0.2in
-(\underline{Admin\_ID}, Admin\_Name, Admin\_Email, Admin\_Password, Admin\_Picture,\\
-\underline{Manager\_ID}, Manager\_Name, Manager\_Email, Manager\_Password,Manager\_Picture, Manager\_Hiredate, Manager\_Phone)
+
+\begin{itemize}
+    \item (\underline{Admin\_ID}, Admin\_Name, Admin\_Email, Admin\_Password, Admin\_Picture,\\
+          \underline{Manager\_ID}, Manager\_Name, Manager\_Email, Manager\_Password,Manager\_Picture, Manager\_Hiredate, Manager\_Phone)
+\end{itemize}
 
 \subsection*{\underline{2NF}}
 No partial dependencies found.
 \vskip 0.2in
 
 \begin{itemize}
-    \item Admin\_ID, Admin\_Name, Admin\_Email, Admin\_Password, Admin\_Picture
-    \item Manager\_ID, Manager\_Name, Manager\_Email, Manager\_Password, Manager\_Picture, Manager\_Hiredate, Manager\_Phone
+    \item \underline{Admin\_ID}, Admin\_Name, Admin\_Email, Admin\_Password, Admin\_Picture
+    \item \underline{Manager\_ID}, Manager\_Name, Manager\_Email, Manager\_Password, Manager\_Picture, Manager\_Hiredate, Manager\_Phone
 \end{itemize}
 
 \subsection*{\underline{3NF}}
-No transitive dependencies found.
-\vskip 0.2in
-same as 2NF
+No transitive dependencies found.Same as 2NF
 
 \subsection*{\underline{Table after Normalization}}
 \vskip 0.2in
 \begin{itemize}
-    \item \textbf{Admin} (\underline{Admin\_ID}, Admin\_Name, Admin\_Email, Admin\_Password, Admin\_Picture)
-    \item  \textbf{Manager} (\underline{Manager\_ID}, Manager\_Name, Manager\_Email, Manager\_Password, Manager\_Picture, Manager\_Hiredate)
-    \item  \textbf{Manager\_Phone} (\underline{Manager\_ID}, \underline{Manager\_Phone})
+    \item \textbf{Manager} (\underline{Manager\_ID}, Manager\_Name, Manager\_Email, Manager\_Password, Manager\_Picture, Manager\_Hiredate)
+    \item \textbf{Admin} (\underline{Admin\_ID}, Admin\_Name, Admin\_Email, Admin\_Password, Admin\_Picture, \textbf{Manager\_ID})
+    \item \textbf{Manager\_Phone} (\underline{Manager\_ID}, \underline{Manager\_Phone})
 \end{itemize}
 
 \clearpage
