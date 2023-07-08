@@ -1,0 +1,34 @@
+\subsection{\texorpdfstring{\centering (Finance-organization)}{(Finance-organization)}}
+
+\subsection*{\underline{UNF}}
+
+(\underline{Finance\_ID}, Finance\_Account\_Number, Finance\_Balance,\\
+\underline{Organization\_ID}, Organization\_Name, Organization\_Email, Organization\_Password, Organization\_Picture, Organization\_Phone)
+
+\subsection*{\underline{1NF}}
+Phone is multi-valued attribute.
+\vskip 0.2in
+
+\begin{itemize}
+    \item
+          (\underline{Finance\_ID}, Finance\_Account\_Number, Finance\_Balance,\\
+          \underline{Organization\_ID}, Organization\_Name, Organization\_Email, Organization\_Password, Organization\_Picture, Organization\_Phone)
+\end{itemize}
+
+\subsection*{\underline{2NF}}
+\begin{itemize}
+    \item \textbf{Finance}(\underline{Finance\_ID}, Finance\_Account\_Number, Finance\_Balance)
+    \item \textbf{Organization}(\underline{Organization\_ID}, Organization\_Name, Organization\_Email, Organization\_Password, Organization\_Picture, Organization\_Phone)
+\end{itemize}
+
+\subsection*{\underline{3NF}}
+No transitive dependency found.Same as 2NF.
+
+\subsection*{\underline{Table after Normalization}}
+\begin{itemize}
+    \item \textbf{Finance}(\underline{Finance\_ID}, Finance\_Account\_Number, Finance\_Balance)
+    \item \textbf{Organization}(\underline{Organization\_ID}, Organization\_Name, Organization\_Email, Organization\_Password, Organization\_Picture, Organization\_Phone, \textbf{Finance\_ID})
+    \item \textbf{Organization\_Phone} (\textbf{Organization\_ID},{Organization\_Phone})
+\end{itemize}
+
+\clearpage
