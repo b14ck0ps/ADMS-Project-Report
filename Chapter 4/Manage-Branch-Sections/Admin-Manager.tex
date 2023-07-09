@@ -29,8 +29,8 @@ No transitive dependencies found.Same as 2NF
 \subsection*{\underline{Table after Normalization}}
 \vskip 0.2in
 \begin{itemize}
-    \item \textbf{Manager} (\underline{Manager\_ID}, Manager\_Name, Manager\_Email, Manager\_Password, Manager\_Picture, Manager\_Hiredate)
-    \item \textbf{Admin} (\underline{Admin\_ID}, Admin\_Name, Admin\_Email, Admin\_Password, Admin\_Picture, \textbf{Manager\_ID})
+    \item \textbf{Manager} (\underline{Manager\_ID}, Manager\_Name, Manager\_Email, Manager\_Password, Manager\_Picture, Manager\_Hiredate,\textbf{Admin\_ID})
+    \item \textbf{Admin} (\underline{Admin\_ID}, Admin\_Name, Admin\_Email, Admin\_Password, Admin\_Picture)
     \item \textbf{Manager\_Phone} (\underline{Mp\_ID}, \textbf{Manager\_ID},{Manager\_Phone})
 \end{itemize}
 
