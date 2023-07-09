@@ -1,0 +1,58 @@
+\section{Index for Table}
+
+\begin{lstlisting}[caption={Index for Table}, label={lst:index_table}]
+    -- Create index for Manager table
+    CREATE INDEX idx_manager_email ON Manager (Manager_Email);
+    -- Create index for Admin table
+    CREATE INDEX idx_admin_email ON Admin (Admin_Email);
+    -- Create index for Manager_Phone table
+    CREATE INDEX idx_manager_phone_manager_id ON Manager_Phone (Manager_ID);
+    -- Create index for Finance table
+    CREATE INDEX idx_finance_manager_id ON Finance (Manager_ID);
+    -- Create index for Team table
+    CREATE INDEX idx_team_manager_id ON Team (Manager_ID);
+   
+    -- Create index for Team_Winning table
+    CREATE INDEX idx_team_winning_team_id ON Team_Winning (Team_ID);
+    -- Create index for SocialMedia table
+    CREATE INDEX idx_socialmedia_name ON SocialMedia (SocialMedia_Name);
+    -- Create index for ContentCreator table
+    CREATE INDEX idx_contentcreator_name ON ContentCreator (ContentCreator_Name);
+    -- Create index for ContentCreator_SocialMedia table
+    CREATE INDEX idx_ccs_contentcreator_id ON ContentCreator_SocialMedia (ContentCreator_ID);
+    -- Create index for ContentCreator_Address table
+    CREATE INDEX idx_cca_contentcreator_id ON ContentCreator_Address (ContentCreator_ID);
+    -- Create index for ContentCreator_Phone table
+    CREATE INDEX idx_ccp_contentcreator_id ON ContentCreator_Phone (ContentCreator_ID);
+    -- Create index for SocialMedia_Phone table
+    CREATE INDEX idx_smp_socialmedia_id ON SocialMedia_Phone (SocialMedia_ID);
+    -- Create index for Organization table
+    CREATE INDEX idx_organization_name ON Organization (Organization_Name);
+    -- Create index for Organization_Phone table
+    CREATE INDEX idx_op_organization_id ON Organization_Phone (Organization_ID);
+    -- Create index for Player table
+    CREATE INDEX idx_player_name ON Player (Player_Name);
+   
+    -- Create index for Player_Address table
+    CREATE INDEX idx_pa_player_id ON Player_Address (Player_ID);
+    -- Create index for Player_Social_Link table
+    CREATE INDEX idx_psl_player_id ON Player_Social_Link (Player_ID);
+    -- Create index for Player_Phone table
+    CREATE INDEX idx_pp_player_id ON Player_Phone (Player_ID);
+    -- Create index for Player_Winning table
+    CREATE INDEX idx_pw_player_id ON Player_Winning (Player_ID);
+    -- Create index for Record table
+    CREATE INDEX idx_record_date ON Record (Record_Date);
+    
+    -- Create index for Tournament table
+    CREATE INDEX idx_tournament_name ON Tournament (Tournament_Name);
+    -- Create index for Game table
+    CREATE INDEX idx_game_name ON Game (Game_Name);
+    -- Create index for Company table
+    CREATE INDEX idx_company_name ON Company (Company_Name);
+    -- Create index for Company_Phone table
+    CREATE INDEX idx_cp_company_id ON Company_Phone (Company_ID);
+    -- Create index for Organization_Company table
+    CREATE INDEX idx_oc_organization_id ON Organization_Company (Organization_ID);
+    --
+\end{lstlisting}
