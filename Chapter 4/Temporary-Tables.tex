@@ -1,0 +1,92 @@
+\section{Temporary Tables}
+\hrulefill
+\begin{itemize}
+% Admin - Manager
+    \item \textbf{Manager} (\underline{Manager\_ID}, Manager\_Name, Manager\_Email, Manager\_Password, Manager\_Picture, Manager\_Hiredate)
+    \item \textbf{Admin} (\underline{Admin\_ID}, Admin\_Name, Admin\_Email, Admin\_Password, Admin\_Picture, \textbf{Manager\_ID})
+    \item \textbf{Manager\_Phone} (\underline{Mp\_ID}, \textbf{Manager\_ID},{Manager\_Phone})
+
+
+% Manager - Finance
+    \item \sout{\textbf{Manager}(\underline{Manager\_ID}, Manager\_Name, Manager\_Email, Manager\_Password, Manager\_Picture, Manager\_Hiredate)}
+    \item \textbf{Finance}(\underline{Finance\_ID}, Finance\_Account\_Number, Finance\_Balance,\textbf{ Manager\_ID})
+    \item \sout{\textbf{Manager\_Phone} (\underline{Mp\_ID}, \textbf{Manager\_ID},{Manager\_Phone})}
+
+
+% Manager - Team
+    \item \sout{\textbf{Manager}(\underline{Manager\_ID}, Manager\_Name, Manager\_Email, Manager\_Password,\\Manager\_Picture, Manager\_Hiredate)}
+    \item \textbf{Team}(\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,\\Total\_Price\_Money, \textbf{Manager\_ID}
+    \item \textbf{Team\_Winnig}(\underline{Tw\_ID}, \textbf{Team\_ID}, Team\_Winnig)
+    \item \sout{\textbf{Manager\_Phone} (\underline{Mp\_ID}, \textbf{Manager\_ID},{Manager\_Phone})}
+
+
+% SocialMedia - ContentCreator
+
+    \item \textbf{SocialMedia} (\underline{SocialMedia\_ID}, SocialMedia\_Name, SocialMedia\_Email, SocialMedia\_Password, SocialMedia\_Picture , SocialMedia\_Hiredate , SocialMedia\_Salary)
+    \item \textbf{ContentCreator} (\underline{ContentCreator\_ID}, ContentCreator\_Name, ContentCreator\_Email, ContentCreator\_Password, ContentCreator\_Picture , ContentCreator\_Hiredate , ContentCreator\_Salary)
+    \item \textbf{ContentCreator\_SocialMedia} (\underline{Ccs\_ID},\textbf{ContentCreator\_ID} , ContentCreator\_Facebook\_Link, ContentCreator\_Twitter\_Link, ContentCreator\_\\Instagram\_Link, ContentCreator\_Youtube\_Link)
+    \item \textbf{ContentCreator\_Address} (\underline{Cca\_ID}, \textbf{ContentCreator\_ID}, ContentCreator\_Country, ContentCreator\_City, ContentCreator\_Street, ContentCreator\_Zip\_Code)
+    \item \textbf{ContentCreator\_Phone} (\underline{Ccp\_ID}, \textbf{ContentCreator\_ID}, ContentCreator\_Phone)
+    \item \textbf{SocialMedia\_Phone} (\underline{Smp\_ID}, \textbf{SocialMedia\_ID}, SocialMedia\_Phone)
+
+% Organization - Finance
+    \item \sout{\textbf{Finance}(\underline{Finance\_ID}, Finance\_Account\_Number, Finance\_Balance)}
+    \item \textbf{Organization}(\underline{Organization\_ID}, Organization\_Name, Organization\_Email, Organization\_Password, Organization\_Picture, Organization\_Phone, \textbf{Finance\_ID})
+    \item \textbf{Organization\_Phone} (\underline{Op\_ID}, \textbf{Organization\_ID},{Organization\_Phone})
+
+
+% Finance - SocialMedia
+    \item \sout{\textbf{Finance}(\underline{Finance\_ID}, Finance\_Account\_Number, Finance\_Balance)}
+    \item \sout{\textbf{SocialMedia}(\underline{SocialMedia\_ID}, SocialMedia\_Name, SocialMedia\_Email, SocialMedia\_Password, SocialMedia\_Picture ,  SocialMedia\_Hiredate , SocialMedia\_Salary, \textbf{Finance\_ID})}
+    \item \sout{\textbf{SocialMedia\_Phone} (\underline{Smp\_ID}, \textbf{SocialMedia\_ID},{SocialMedia\_Phone})}
+
+
+% Team - Player
+
+    \item \sout{\textbf{Team}(\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Total\_Earning,\\Team\_Winnig)}
+    \item \textbf{Player}(\underline{Player\_ID}, Player\_Name, Player\_Email, Player\_Password, Player\_Picture, Player\_JoinDate, Player\_Salary, Player\_Play\_Hours, Player\_DOB)
+    \item \textbf{Player\_Address} (\underline{Pa\_ID}, \textbf{Player\_ID}, Player\_country, Player\_City, Player\_Street, Player\_Zip\_Code)
+    \item \textbf{Player\_Social\_Link} (\underline{Psl\_ID}, \textbf{Player\_ID}, Player\_Facebook\_Link, Player\_Instagram\_Link, Player\_Twitter\_Link,Player\_Youtube\_Link)
+    \item \textbf{Player\_Phone} (\underline{Pp\_ID}, \textbf{Player\_ID}, Player\_Phone)
+    \item \textbf{Player\_Wining} (\underline{Pw\_ID}, \textbf{Player\_ID}, Player\_Winnig)
+    \item \textbf{Player\_Team} (\underline{Pt\_ID}, \textbf{Player\_ID}, \textbf{Team\_ID})
+
+
+% Record - Tournament
+    \item \textbf{Record}(\underline{Record\_ID}, Record\_Date, Record\_Price\_Pool, \textbf{Tournament\_ID})
+    \item \textbf{Tournament}(\underline{Tournament\_ID}, Tournament\_Name, Tournament\_StartingDate,Tourna-\\ment\_EndingDate, Tournament\_Location, Tournament\_Prize\_Pool)
+
+
+% Tournament - Game
+    \item \textbf{Tournament}(\underline{Tournament\_ID}, Tournament\_Name, Tournament\_StartingDate,Tournament\_EndingDate, Tournament\_Location, Tournament\_Prize\_Pool)
+    \item \textbf{Game}(\underline{Game\_ID}, Game\_Name, Game\_Icon, Game\_ReleaseDate, Game\_Platform, Game\_PricePool, Game\_Genre, Game\_Publisher)
+    \item \textbf{Tournament\_Game}(\underline{Tournament\_ID}, \underline{Game\_ID})
+
+
+% Organization - Tournament
+    \item \textbf{Tournament}(\underline{Tournament\_ID}, Tournament\_Name, Tournament\_StartingDate,Tournament\_EndingDate, Tournament\_Location, Tournament\_Prize\_Pool, \underline{Organization\_ID})
+    \item \sout{\textbf{Organization}(\underline{Organization\_ID}, Organization\_Name, Organization\_Email, Organization\_Password, Organization\_Picture)}
+    \item \sout{\textbf{Organization\_Phone}(\underline{Organization\_ID}, Organization\_Phone)}
+    \item \textbf{Organization\_Tournament}(\underline{Organization\_ID}, \underline{Tournament\_ID})
+
+
+% Teams - Game
+    \item \sout{\textbf{Team}(\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Total\_Earning,\\Team\_Winnig)}
+    \item \sout {\textbf{Game}(\underline{Game\_ID}, Game\_Name, Game\_Icon, Game\_ReleaseDate, Game\_Platform, Game\_PricePool, Game\_Genre, Game\_Publisher)}
+    \item \textbf{Team\_Game}(\underline{Team\_ID}, \underline{Game\_ID})
+
+
+% Organization - Company
+    \item \sout{\textbf{Organization}(\underline{Organization\_ID}, Organization\_Name, Organization\_Email, Organization\_Picture, \underline{Company\_ID})}
+    \item \sout{\textbf{Organization\_Phone}(\underline{Organization\_ID}, Organization\_Phone)}
+    \item \textbf{Company}(\underline{Company\_ID}, Company\_Name, Company\_Email, Company\_Picture, Company\_Phone, location)
+    \item \textbf{Company\_Phone}(\underline{Company\_ID}, Company\_Phone)
+    \item \textbf{Organization\_Company}(\underline{Organization\_ID}, \underline{Company\_ID})
+
+
+% Organization - Team
+    \item \sout{\textbf{Team}(\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Total\_Earning,\\Team\_Winnig}
+    \item \sout{\textbf{Company}(\underline{Company\_ID}, Company\_Name, Company\_Email, Company\_Password, Company\_Picture, Company\_Phone, Company\_location)}
+    \item \textbf{Team\_Company}(\underline{Team\_ID}, \underline{Company\_ID})
+    \item \sout{\textbf{Company\_Phone}(\underline{Company\_ID}, Company\_Phone)}
+\end{itemize}
