@@ -78,7 +78,9 @@
         SocialMedia_Password VARCHAR(100),
         SocialMedia_Picture VARCHAR(100),
         SocialMedia_Hiredate DATE,
-        SocialMedia_Salary DECIMAL(10, 2)
+        SocialMedia_Salary DECIMAL(10, 2),
+        Manager_ID INT,
+        FOREIGN KEY (Manager_ID) REFERENCES Manager (Manager_ID)
     );
     \end{lstlisting}
     
@@ -91,7 +93,9 @@
         ContentCreator_Password VARCHAR(100),
         ContentCreator_Picture VARCHAR(100),
         ContentCreator_Hiredate DATE,
-        ContentCreator_Salary DECIMAL(10, 2)
+        ContentCreator_Salary DECIMAL(10, 2),
+        SocialMedia_ID INT,
+        FOREIGN KEY (SocialMedia_ID) REFERENCES SocialMedia (SocialMedia_ID)
     );
     \end{lstlisting}
    
@@ -130,7 +134,7 @@
         FOREIGN KEY (ContentCreator_ID) REFERENCES ContentCreator (ContentCreator_ID)
     );
     \end{lstlisting}
-    
+    \clearpage
     % Create SocialMedia Phone table
     \begin{lstlisting}[caption={Create SocialMedia Phone table}, label={lst:create_socialmedia_phone}]
     CREATE TABLE SocialMedia_Phone (
@@ -140,7 +144,6 @@
         FOREIGN KEY (SocialMedia_ID) REFERENCES SocialMedia (SocialMedia_ID)
     );
     \end{lstlisting}
-    \clearpage
     % Create Organization table
     \begin{lstlisting}[caption={Create Organization table}, label={lst:create_organization}]
     CREATE TABLE Organization (
@@ -205,7 +208,7 @@
         FOREIGN KEY (Player_ID) REFERENCES Player (Player_ID)
     );
     \end{lstlisting}
-    
+    \clearpage
     % Create Player Phone table
     \begin{lstlisting}[caption={Create Player Phone table}, label={lst:create_player_phone}]
     CREATE TABLE Player_Phone (
@@ -215,7 +218,6 @@
         FOREIGN KEY (Player_ID) REFERENCES Player (Player_ID)
     );
     \end{lstlisting}
-    \clearpage
     % Create Player Winning table
     \begin{lstlisting}[caption={Create Player Winning table}, label={lst:create_player_winning}]
     CREATE TABLE Player_Winning (

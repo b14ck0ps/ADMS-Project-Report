@@ -65,6 +65,8 @@ CREATE TABLE SocialMedia (
     SocialMedia_Picture VARCHAR(100),
     SocialMedia_Hiredate DATE,
     SocialMedia_Salary DECIMAL(10, 2)
+    Manager_ID INT,
+    FOREIGN KEY (Manager_ID) REFERENCES Manager (Manager_ID)
 );
 
 -- Create ContentCreator table
@@ -76,6 +78,8 @@ CREATE TABLE ContentCreator (
     ContentCreator_Picture VARCHAR(100),
     ContentCreator_Hiredate DATE,
     ContentCreator_Salary DECIMAL(10, 2)
+    SocialMedia_ID INT,
+    FOREIGN KEY (SocialMedia_ID) REFERENCES SocialMedia (SocialMedia_ID)
 );
 
 -- Create ContentCreator SocialMedia table
