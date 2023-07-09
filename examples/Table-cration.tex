@@ -1,0 +1,80 @@
+\chapter{SQL Queries}
+\hrulefill
+
+\section{Sequence}
+\begin{lstlisting}[caption={Sample Sequence}, label={lst:s1}]
+    -- A Sample query for Creating a Sequence
+    CREATE SEQUENCE sequence_name
+    START WITH 1000
+    INCREMENT BY 1
+    NOCACHE
+    NOCYCLE;
+
+    \end{lstlisting}
+
+\section{Table Creation}
+\begin{lstlisting}[caption={Sample one Table}, label={lst:c1}]
+    -- A Sample query for Creating a table
+    CREATE TABLE table_name (
+        column1 datatype,
+        column2 datatype,
+        column3 datatype,
+        ....
+    );
+    \end{lstlisting}
+
+\section{Data Insertion}
+\begin{lstlisting}[caption={Sample one Table}, label={lst:i1}]
+    -- A Sample query for Inserting data into a table
+    INSERT INTO table_name (column1, column2, column3, ...)
+    VALUES (value1, value2, value3, ...);
+    \end{lstlisting}
+
+\section{Data Selection}
+\begin{lstlisting}[caption={Sample one Table}, label={lst:s2}]
+    -- A Sample query for Selecting data from a table
+    SELECT column1, column2, ...
+    FROM table_name;
+    \end{lstlisting}
+
+\section{Data Update}
+\begin{lstlisting}[caption={Sample one Table}, label={lst:u1}]
+    -- A Sample query for Updating data in a table
+    UPDATE table_name
+    SET column1 = value1, column2 = value2, ...
+    WHERE condition;
+    \end{lstlisting}
+
+\section{Data Deletion}
+\begin{lstlisting}[caption={Sample one Table}, label={lst:d1}]
+    -- A Sample query for Deleting data from a table
+    DELETE FROM table_name WHERE condition;
+    \end{lstlisting}
+
+\section{Functions and Joins}
+
+\subsection{Single Row Functions}
+\begin{lstlisting}[caption={Sample one Table}, label={lst:s3}]
+    -- A Sample query for Single Row Functions
+    SELECT function_name(column_name)
+    FROM table_name;
+    \end{lstlisting}
+
+
+\subsection{Group Functions}
+\begin{lstlisting}[caption={Sample one Table}, label={lst:g1}]
+    -- A Sample query for Group Functions
+    SELECT function_name(column_name)
+    FROM table_name
+    WHERE condition
+    GROUP BY column_name;
+    \end{lstlisting}
+
+
+\subsection{Joins}
+\begin{lstlisting}[caption={Sample one Table}, label={lst:j1}]
+    -- A Sample query for Joins
+    SELECT table1.column1, table2.column2...
+    FROM table1, table2
+    WHERE table1.column_name = table2.column_name;
+    \end{lstlisting}
