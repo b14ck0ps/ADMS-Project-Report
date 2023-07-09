@@ -1,0 +1,36 @@
+\subsection{\texorpdfstring{\centering (Record $\rightarrow$ Tournament)}{(Record - Tournament)}}
+
+\subsection*{\underline{UNF}}
+(
+\underline{Record\_ID},Record\_Position, Record\_Date, Record\_Price\_Pool,
+\underline{Tournament\_ID}, Tournament\_Name, Tournament\_StartingDate,Tournament\_EndingDate, Tournament\_Location, Tournament\_Prize\_Pool
+)
+
+
+\subsection*{\underline{1NF}}
+
+\begin{itemize}
+    \item
+          (
+          \underline{Record\_ID},Record\_Position, Record\_Date, Record\_Price\_Pool,
+          \underline{Tournament\_ID}, Tournament\_Name, Tournament\_StartingDate,Tournament\_EndingDate, Tournament\_Location, Tournament\_Prize\_Pool
+          )
+\end{itemize}
+
+
+\subsection*{\underline{2NF}}
+\begin{itemize}
+    \item \textbf{Record}(\underline{Record\_ID},Record\_Position, Record\_Date, Record\_Price\_Pool, \textbf{Tournament\_ID})
+    \item \textbf{Tournament}(\underline{Tournament\_ID}, Tournament\_Name, Tournament\_StartingDate,Tourna-\\ment\_EndingDate, Tournament\_Location, Tournament\_Prize\_Pool)
+\end{itemize}
+
+\subsection*{\underline{3NF}}
+No transitive dependency found.Same as 2NF.
+
+\subsection*{\underline{Table after Normalization}}
+\begin{itemize}
+    \item \textbf{Record}(\underline{Record\_ID},Record\_Position, Record\_Date, Record\_Price\_Pool, \textbf{Tournament\_ID})
+    \item \textbf{Tournament}(\underline{Tournament\_ID}, Tournament\_Name, Tournament\_StartingDate,Tourna-\\ment\_EndingDate, Tournament\_Location, Tournament\_Prize\_Pool)
+\end{itemize}
+
+\clearpage
