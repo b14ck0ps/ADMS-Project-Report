@@ -72,3 +72,6 @@ CREATE SEQUENCE seq_cp_id START WITH 1 INCREMENT BY 1;
 
 -- Create sequence for Organization_Company table
 CREATE SEQUENCE seq_oc_id START WITH 1 INCREMENT BY 1;
+
+--Create sequence for Player_Tournament table
+CREATE SEQUENCE seq_pt_id START WITH 1 INCREMENT BY 1;
