@@ -1,0 +1,33 @@
+\subsection{\texorpdfstring{\centering (Finance $\rightarrow$ SocialMedia)}{(Finance-SocialMedia)}}
+
+\subsection*{\underline{UNF}}
+
+(\underline{Finance\_ID}, Finance\_Account\_Number, Finance\_Balance,\\
+\underline{SocialMedia\_ID}, SocialMedia\_Name, SocialMedia\_Email, SocialMedia\_Password, SocialMedia\_Picture, SocialMedia\_Phone ,  SocialMedia\_Hiredate , SocialMedia\_Salary)
+
+\subsection*{\underline{1NF}}
+Phone is multi-valued attribute.
+\vskip 0.2in
+
+\begin{itemize}
+    \item
+          (\underline{Finance\_ID}, Finance\_Account\_Number, Finance\_Balance,\\
+          \underline{SocialMedia\_ID}, SocialMedia\_Name, SocialMedia\_Email, SocialMedia\_Password, SocialMedia\_Picture, SocialMedia\_Phone ,  SocialMedia\_Hiredate , SocialMedia\_Salary)
+\end{itemize}
+
+\subsection*{\underline{2NF}}
+\begin{itemize}
+    \item \textbf{Finance}(\underline{Finance\_ID}, Finance\_Account\_Number, Finance\_Balance)
+    \item \textbf{SocialMedia}(\underline{SocialMedia\_ID}, SocialMedia\_Name, SocialMedia\_Email, SocialMedia\_Password, SocialMedia\_Picture, SocialMedia\_Phone ,  SocialMedia\_Hiredate , SocialMedia\_Salary)
+\end{itemize}
+
+\subsection*{\underline{3NF}}
+No transitive dependency found.Same as 2NF.
+
+\subsection*{\underline{Table after Normalization}}
+\begin{itemize}
+    \item \textbf{Finance}(\underline{Finance\_ID}, Finance\_Account\_Number, Finance\_Balance)
+    \item \textbf{SocialMedia}(\underline{SocialMedia\_ID}, SocialMedia\_Name, SocialMedia\_Email, SocialMedia\_Password, SocialMedia\_Picture ,  SocialMedia\_Hiredate , SocialMedia\_Salary, \textbf{Finance\_ID})
+    \item \textbf{SocialMedia\_Phone} (\underline{Smp\_ID}, \textbf{SocialMedia\_ID},{SocialMedia\_Phone})
+\end{itemize}
+\clearpage
