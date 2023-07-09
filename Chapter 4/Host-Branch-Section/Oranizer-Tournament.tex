@@ -1,0 +1,39 @@
+\subsection{\texorpdfstring{\centering (Organizer $\rightarrow$ Tournament)}{(Organizer - Tournament)}}
+
+
+\subsubsection*{\underline{UNF}}
+
+(\underline{Tournament\_ID}, Tournament\_Name, Tournament\_StartingDate,Tournament\_EndingDate, Tournament\_Location, Tournament\_Prize\_Pool,
+\underline{Organization\_ID}, Organization\_Name, Organization\_Email, Organization\_Password, Organization\_Picture, Organization\_Phone)
+
+
+
+\subsubsection*{\underline{1NF}}
+Phone is a multi-vale attribute.
+
+\begin{itemize}
+    \item (\underline{Tournament\_ID}, Tournament\_Name, Tournament\_StartingDate,Tournament\_EndingDate, Tournament\_Location, Tournament\_Prize\_Pool,
+    \underline{Organization\_ID}, Organization\_Name, Organization\_Email, Organization\_Password, Organization\_Picture, Organization\_Phone)
+\end{itemize}
+
+
+\subsection*{\underline{2NF}}
+\begin{itemize}
+    \item \textbf{Tournament}(\underline{Tournament\_ID}, Tournament\_Name, Tournament\_StartingDate,Tournament\_EndingDate, Tournament\_Location, Tournament\_Prize\_Pool, \underline{Organization\_ID})
+    \item \textbf{Organization}(\underline{Organization\_ID}, Organization\_Name, Organization\_Email, Organization\_Password, Organization\_Picture, Organization\_Phone)
+\end{itemize}
+
+\subsection*{\underline{3NF}}
+No transitive dependency found.Same as 2NF.
+
+\subsection*{\underline{Table after Normalization}}
+
+\begin{itemize}
+    \item \textbf{Tournament}(\underline{Tournament\_ID}, Tournament\_Name, Tournament\_StartingDate,Tournament\_EndingDate, Tournament\_Location, Tournament\_Prize\_Pool, \underline{Organization\_ID})
+    \item \textbf{Organization}(\underline{Organization\_ID}, Organization\_Name, Organization\_Email, Organization\_Password, Organization\_Picture)
+    \item \textbf{Organization\_Phone}(\underline{Organization\_ID}, Organization\_Phone)
+    \item \textbf{Organization\_Tournament}(\underline{Organization\_ID}, \underline{Tournament\_ID})
+\end{itemize}
+
+
+\clearpage
