@@ -2,7 +2,7 @@
 % Define the SQL language syntax highlighting
 \renewcommand{\lstlistingname}{SQL}
 \lstdefinelanguage{SQL}{
-  keywords={SELECT, FROM, WHERE, GROUP, BY, HAVING, ORDER, JOIN, ON, AS, AND, OR, NOT, NULL, INSERT, INTO, VALUES, UPDATE, SET, DELETE, FROM, CREATE, TABLE, SEQUENCE },
+  keywords={SELECT, FROM, WHERE, GROUP, BY, HAVING, ORDER, JOIN, ON, AS, AND, OR, NOT, NULL, INSERT, INTO, VALUES, UPDATE, SET, DELETE, FROM, CREATE, TABLE, SEQUENCE,VARCHAR ,REFERENCES,FOREIGN, KEY, INT, PRIMARY, DATE, DECIMAL, UNIQUE, ADD, CONSTRAINT, ALTER },
   keywordstyle=\color{blue},
   sensitive=true,
   comment=[l]{--},
@@ -17,7 +17,7 @@
 % Set the default style for SQL code
 \lstset{
   language=SQL,
-  basicstyle=\ttfamily\small,
+  basicstyle=\ttfamily\scriptsize,
   showstringspaces=false,
   breaklines=true,
   numbers=left,

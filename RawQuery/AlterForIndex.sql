@@ -1,0 +1,74 @@
+-- Alter Manager table to add index
+ALTER TABLE Manager ADD CONSTRAINT idx_manager_email UNIQUE (Manager_Email);
+
+-- Alter Admin table to add index
+ALTER TABLE Admin ADD CONSTRAINT idx_admin_email UNIQUE (Admin_Email);
+
+-- Alter Manager_Phone table to add index
+ALTER TABLE Manager_Phone ADD CONSTRAINT idx_manager_phone_manager_id UNIQUE (Manager_ID);
+
+-- Alter Finance table to add index
+ALTER TABLE Finance ADD CONSTRAINT idx_finance_manager_id UNIQUE (Manager_ID);
+
+-- Alter Team table to add index
+ALTER TABLE Team ADD CONSTRAINT idx_team_manager_id UNIQUE (Manager_ID);
+
+-- Alter Team_Winning table to add index
+ALTER TABLE Team_Winning ADD CONSTRAINT idx_team_winning_team_id UNIQUE (Team_ID);
+
+-- Alter SocialMedia table to add index
+ALTER TABLE SocialMedia ADD CONSTRAINT idx_socialmedia_name UNIQUE (SocialMedia_Name);
+
+-- Alter ContentCreator table to add index
+ALTER TABLE ContentCreator ADD CONSTRAINT idx_contentcreator_name UNIQUE (ContentCreator_Name);
+
+-- Alter ContentCreator_SocialMedia table to add index
+ALTER TABLE ContentCreator_SocialMedia ADD CONSTRAINT idx_ccs_contentcreator_id UNIQUE (ContentCreator_ID);
+
+-- Alter ContentCreator_Address table to add index
+ALTER TABLE ContentCreator_Address ADD CONSTRAINT idx_cca_contentcreator_id UNIQUE (ContentCreator_ID);
+
+-- Alter ContentCreator_Phone table to add index
+ALTER TABLE ContentCreator_Phone ADD CONSTRAINT idx_ccp_contentcreator_id UNIQUE (ContentCreator_ID);
+
+-- Alter SocialMedia_Phone table to add index
+ALTER TABLE SocialMedia_Phone ADD CONSTRAINT idx_smp_socialmedia_id UNIQUE (SocialMedia_ID);
+
+-- Alter Organization table to add index
+ALTER TABLE Organization ADD CONSTRAINT idx_organization_name UNIQUE (Organization_Name);
+
+-- Alter Organization_Phone table to add index
+ALTER TABLE Organization_Phone ADD CONSTRAINT idx_op_organization_id UNIQUE (Organization_ID);
+
+-- Alter Player table to add index
+ALTER TABLE Player ADD CONSTRAINT idx_player_name UNIQUE (Player_Name);
+
+-- Alter Player_Address table to add index
+ALTER TABLE Player_Address ADD CONSTRAINT idx_pa_player_id UNIQUE (Player_ID);
+
+-- Alter Player_Social_Link table to add index
+ALTER TABLE Player_Social_Link ADD CONSTRAINT idx_psl_player_id UNIQUE (Player_ID);
+
+-- Alter Player_Phone table to add index
+ALTER TABLE Player_Phone ADD CONSTRAINT idx_pp_player_id UNIQUE (Player_ID);
+
+-- Alter Player_Winning table to add index
+ALTER TABLE Player_Winning ADD CONSTRAINT idx_pw_player_id UNIQUE (Player_ID);
+
+-- Alter Record table to add index
+ALTER TABLE Record ADD CONSTRAINT idx_record_date UNIQUE (Record_Date);
+
+-- Alter Tournament table to add index
+ALTER TABLE Tournament ADD CONSTRAINT idx_tournament_name UNIQUE (Tournament_Name);
+
+-- Alter Game table to add index
+ALTER TABLE Game ADD CONSTRAINT idx_game_name UNIQUE (Game_Name);
+
+-- Alter Company table to add index
+ALTER TABLE Company ADD CONSTRAINT idx_company_name UNIQUE (Company_Name);
+
+-- Alter Company_Phone table to add index
+ALTER TABLE Company_Phone ADD CONSTRAINT idx_cp_company_id UNIQUE (Company_ID);
+
+-- Alter Organization_Company table to add index
+ALTER TABLE Organization_Company ADD CONSTRAINT idx_oc_organization_id UNIQUE (Organization_ID);
