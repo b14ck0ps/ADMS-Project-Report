@@ -1,5 +1,52 @@
 \chapter{Relational Algebra}
 \hrulefill
 
-\section{Selection}
-\lipsum[1-5]
+\begin{enumerate}
+    \item 
+    Find the name of the manager whose manager id is 5.
+    $$\Pi_{\text{Manager\_Name}}(\sigma_{\text{Manager\_ID}=5(\text{Manager})})$$
+    \vspace{0.2cm}
+    \item 
+    Find the Salary of 'Player 1'.
+    $$\Pi_{\text{Player\_Salary}}(\sigma_{\text{name}=\text{"Player 1"}(\text{Player})})$$
+    \vspace{0.2cm}
+    \item
+    Find Player id whose birthday is on 1992-05-10.
+    $$\Pi_{\text{Player\_ID}}(\sigma_{\text{Player\_DOB}=\text{"1992-05-10"}(\text{Player})})$$
+    \vspace{0.2cm}
+    \item
+    Find the Country, City, Street, and Zip code where Content Creator ID is equal to 4.
+    $$\Pi_{\text{ContentCreator\_Country, ContentCreator\_City,ContentCreator\_Street, ContentCreator\_Zip\_Code}}$$
+    $$(\sigma_{\text{ContentCreator\_ID}=4 (\text{ContentCreator\_Address})})$$
+    \vspace{0.2cm}
+    \item
+    Find the Team ID that won the Championship 2023.
+    $$\Pi_{\text{Team\_ID}}(\sigma_{\text{Team\_Winning =\text{"Championship 2023"}}(\text{Team\_Winning})})$$
+    \vspace{0.2cm}
+\end{enumerate}
+
+
+
+
+
+
+
+
+% 1. Find the name of the manager whose manager id is 5. 
+% ∏Manager_Name (σ Manager_ID=5 (Manager)) 
+
+% 2. Find the Salary of ‘Player 1’. 
+% ∏Player_Salary (σ name = “Player 1” (Player))
+% 3. Find Player ids which birthday is on 1992-05-10. 
+% ∏Player_ID (σ Player_DOB = “1992-05-10” (Player)) 
+
+% 4. Find the Country, City, Street and Zip code where Content Creator ID is equal to 4.
+% ∏ContentCreator_Country, ContentCreator_City, ContentCreator_Street, ContentCreator_Zip_Code 
+% (σ ContentCreator_ID = 4
+% (ContentCreator_Address)) 
+
+% 5. Find the Team Id who won the Championship 2023.
+
+% ∏Team_ID (σ Team_Winning = “Championship 2023”  
+% (Team_Winning))
+

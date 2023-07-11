@@ -9,16 +9,17 @@
 \usepackage{sqlSyntex}
 \usepackage{lipsum}
 \usepackage{float}
+\usepackage{amsmath}
 \usepackage[normalem]{ulem}
 \usepackage[labelformat=empty]{caption}
 % format chapter title
 \titleformat{\chapter}[display]
 {\normalfont \bfseries}{\hrulefill}{0pt}{\Huge}
 \titlespacing*{\chapter}{0pt}{0pt}{5pt}
+\DeclareMathSizes{12}{14}{10}{7}
 
 \begin{document}
 \renewcommand\bibname{References} %Renames "Bibliography" to "References" on ref page
-
 %include other pages
 \input{FrontPages/title.tex}
 \input{FrontPages/contribution.tex}
