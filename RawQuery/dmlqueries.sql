@@ -76,3 +76,22 @@ SELECT cc.ContentCreator_Name, sm.SocialMedia_Name, sm.SocialMedia_Email
 FROM ContentCreator cc
 JOIN SocialMedia sm ON cc.SOCIALMEDIA_ID = sm.SocialMedia_ID;
 
+
+----------------Views----------------
+-- Create a view to display the details of managers and their associated teams
+CREATE VIEW ManagerTeamView AS
+SELECT m.Manager_Name, t.Team_Name, t.Team_Country
+FROM Manager m
+JOIN Team t ON m.Manager_ID = t.Manager_ID;
+
+-- Create a view to show the average salary of content creators
+CREATE VIEW AverageSalaryView AS
+SELECT AVG(ContentCreator_Salary) AS Average_Salary
+FROM ContentCreator;
+
+-- Create a view to list the players and their corresponding teams
+CREATE VIEW PlayerTeamView AS
+SELECT p.Player_Name, t.Team_Name
+FROM Player p
+JOIN Player_Team pt ON p.Player_ID = pt.Player_ID
+JOIN Team t ON pt.Team_ID = t.Team_ID;
