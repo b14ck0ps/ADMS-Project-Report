@@ -1,3 +1,5 @@
+---------------- Single Row Functions ----------------
+
 -- Retrieve the email domain for the admin with Admin_ID = 1:
 SELECT Admin_Email, SUBSTR(Admin_Email, INSTR(Admin_Email, '@') + 1) AS Email_Domain
 FROM Admin
@@ -12,3 +14,16 @@ SELECT ContentCreator_Name, CONCAT(CONCAT(SUBSTR(ContentCreator_Name, 1, INSTR(C
 FROM ContentCreator
 WHERE ContentCreator_ID = 1;
 
+-------------- Group Functions --------------
+--Calculate the average balance for all finance records
+SELECT AVG(Finance_Balance) AS Average_Balance
+FROM Finance;
+
+--Count the number of teams established in each country
+SELECT Team_Country, COUNT(*) AS Team_Count
+FROM Team
+GROUP BY Team_Country;
+
+--Calculate the total salary expense for content creators
+SELECT SUM(ContentCreator_Salary) AS Total_Salary_Expense
+FROM ContentCreator;
