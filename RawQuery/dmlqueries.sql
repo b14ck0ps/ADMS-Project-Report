@@ -95,3 +95,14 @@ SELECT p.Player_Name, t.Team_Name
 FROM Player p
 JOIN Player_Team pt ON p.Player_ID = pt.Player_ID
 JOIN Team t ON pt.Team_ID = t.Team_ID;
+
+
+----------------Synonyms----------------
+-- Create synonym for the ORGANIZATION_TOURNAMENT table
+CREATE SYNONYM org_tour FOR Organization_Tournament;
+
+-- Create synonym for the CONTENTCREATOR_SOCIALMEDIA table
+CREATE SYNONYM cc_sm FOR ContentCreator_SocialMedia;
+
+-- Create synonym for the CONTENTCREATOR_PHONE table
+CREATE SYNONYM cc_ph FOR ContentCreator_Phone;
