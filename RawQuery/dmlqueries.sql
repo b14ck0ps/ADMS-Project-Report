@@ -58,3 +58,21 @@ WHERE Manager_ID IN (
         WHERE Team_Winning LIKE '%Championship%'
     )
 );
+
+---------------- Joins ----------------
+-- Get the team name and manager name for each team
+SELECT t.Team_Name, m.Manager_Name
+FROM Team t
+JOIN Manager m ON t.Manager_ID = m.Manager_ID;
+
+-- Retrieve the player name, team name, and country for each player
+SELECT p.Player_Name, t.Team_Name, t.Team_Country
+FROM Player p
+JOIN Player_Team pt ON p.Player_ID = pt.Player_ID
+JOIN Team t ON pt.Team_ID = t.Team_ID;
+
+-- Get the content creator name, social media name, and email for each content creator
+SELECT cc.ContentCreator_Name, sm.SocialMedia_Name, sm.SocialMedia_Email
+FROM ContentCreator cc
+JOIN SocialMedia sm ON cc.SOCIALMEDIA_ID = sm.SocialMedia_ID;
+
