@@ -1,0 +1,34 @@
+\section{User Creation}
+\hrulefill
+
+\begin{lstlisting}[caption={User Creation}, label={lst:user_cration}]
+-- Create the users
+CREATE USER admin IDENTIFIED BY bossman ;
+CREATE USER manager IDENTIFIED BY lessbossman ;
+CREATE USER finance IDENTIFIED BY calulator ;
+\end{lstlisting}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/user/creation.png}
+    \caption{Screenshot of User Creation from SQL Plus}
+\end{figure}
+
+\begin{lstlisting}[caption={User Creation}, label={lst:user_cration}]
+-- Grant All privileges to admin user
+GRANT ALL PRIVILEGES TO admin;
+
+-- Grant DML privileges to manager user
+GRANT SELECT ANY TABLE TO MANAGER;
+GRANT UPDATE ANY TABLE TO MANAGER;
+
+-- Grant Read only privileges to finance user
+GRANT SELECT ANY TABLE TO FINANCE;
+\end{lstlisting}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/user/prev.png}
+    \caption{Screenshot of User Privileges from SQL Plus}
+\end{figure}
+
+\clearpage
