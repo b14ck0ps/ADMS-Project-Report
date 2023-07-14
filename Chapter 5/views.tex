@@ -22,8 +22,8 @@
 
 \begin{lstlisting}[caption={ AvgSalaryView },label={lst:V-2}]
     CREATE VIEW AverageSalaryView AS
-    ELECT AVG(ContentCreator_Salary) AS Average_Salary
-    ROM ContentCreator;
+    SELECT AVG(ContentCreator_Salary) AS Average_Salary
+    FROM ContentCreator;
 \end{lstlisting}
 \begin{figure}[H]
     \centering
