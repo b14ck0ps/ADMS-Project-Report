@@ -16,7 +16,7 @@ CREATE TABLE Manager (
     Manager_Picture VARCHAR(100),
     Manager_Hiredate DATE,
     Admin_ID INT,
-    FOREIGN KEY (Admin_id) REFERENCES Manager (Admin_ID)
+    FOREIGN KEY (Admin_id) REFERENCES Admin (Admin_ID)
 );
 
 -- Create Manager Phone table
@@ -64,7 +64,7 @@ CREATE TABLE SocialMedia (
     SocialMedia_Password VARCHAR(100),
     SocialMedia_Picture VARCHAR(100),
     SocialMedia_Hiredate DATE,
-    SocialMedia_Salary DECIMAL(10, 2)
+    SocialMedia_Salary DECIMAL(10, 2),
     Manager_ID INT,
     FOREIGN KEY (Manager_ID) REFERENCES Manager (Manager_ID)
 );
@@ -77,7 +77,7 @@ CREATE TABLE ContentCreator (
     ContentCreator_Password VARCHAR(100),
     ContentCreator_Picture VARCHAR(100),
     ContentCreator_Hiredate DATE,
-    ContentCreator_Salary DECIMAL(10, 2)
+    ContentCreator_Salary DECIMAL(10, 2),
     SocialMedia_ID INT,
     FOREIGN KEY (SocialMedia_ID) REFERENCES SocialMedia (SocialMedia_ID)
 );
