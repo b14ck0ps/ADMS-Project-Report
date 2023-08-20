@@ -143,6 +143,7 @@ CREATE TABLE Organization_Phone (
 -- Create Player table
 CREATE TABLE Player (
     Player_ID INT PRIMARY KEY,
+    Player_Ign VARCHAR(100),
     Player_Name VARCHAR(100),
     Player_Email VARCHAR(100),
     Player_Password VARCHAR(100),
