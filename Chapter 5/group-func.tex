@@ -1,9 +1,8 @@
+\clearpage
 \section{Group Functions}
 \hrulefill
 
-\begin{itemize}
-    \item Calculate the average balance for all finance records
-\end{itemize}
+1. Calculate the average balance for all finance records
 
 \begin{lstlisting}[caption={ Query 1},label={lst:q-1}]
     SELECT AVG(Finance_Balance) AS Average_Balance
@@ -16,9 +15,8 @@
     \label{fig:Result of Query 1}
 \end{figure}
 %%%
-\begin{itemize}
-    \item Count the number of teams established in each country
-\end{itemize}
+2. Count the number of teams established in each country
+
 
 \begin{lstlisting}[caption={ Query 2},label={lst:q-2}]
     SELECT Team_Country, COUNT(*) AS Team_Count
@@ -34,9 +32,7 @@
 \end{figure}
 %%%
 
-\begin{itemize}
-    \item Calculate the total salary expense for content creators
-\end{itemize}
+3. Calculate the total salary expense for content creators
 
 \begin{lstlisting}[caption={ Query 3},label={lst:q-3}]
     SELECT SUM(ContentCreator_Salary) AS Total_Salary_Expense

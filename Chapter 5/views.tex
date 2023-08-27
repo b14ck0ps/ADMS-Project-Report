@@ -1,9 +1,7 @@
 \section{Creating View}
 \hrulefill
 
-\begin{itemize}
-    \item Create a view to display the details of managers and their associated teams
-\end{itemize}
+1. Create a view to display the details of managers and their associated teams
 \begin{lstlisting}[caption={ ManagerTeamView },label={lst:V-1}]
     CREATE VIEW ManagerTeamView AS
     SELECT m.Manager_Name, t.Team_Name, t.Team_Country
@@ -16,9 +14,7 @@
     \caption{Result of ManagerTeamView}
 \end{figure}
 %%%
-\begin{itemize}
-    \item Create a view to show the average salary of content creators
-\end{itemize}
+2. Create a view to show the average salary of content creators
 
 \begin{lstlisting}[caption={ AvgSalaryView },label={lst:V-2}]
     CREATE VIEW AverageSalaryView AS
@@ -31,9 +27,7 @@
     \caption{Result of AverageSalaryView}
 \end{figure}
 %%%
-\begin{itemize}
-    \item Create a view to list the players and their corresponding teams
-\end{itemize}
+3. Create a view to list the players and their corresponding teams
 \begin{lstlisting}[caption={ PlayerTeamView },label={lst:V-3}]
     CREATE VIEW PlayerTeamView AS
     JOIN Team t ON pt.Team_ID = t.Team_ID;

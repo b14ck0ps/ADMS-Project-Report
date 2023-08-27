@@ -1,9 +1,7 @@
 \section{SubQuery}
 \hrulefill
 
-\begin{itemize}
-    \item Retrieve the managers associated with teams established before a specific date
-\end{itemize}
+1. Retrieve the managers associated with teams established before a specific date
 
 \begin{lstlisting}[caption={ Query 1},label={lst:q-1}]
     SELECT Manager_Name
@@ -22,9 +20,8 @@
 \end{figure}
 %%%
 \vspace{2cm}
-\begin{itemize}
-    \item Get the content creators who have a higher salary than the average salary of all content creators
-\end{itemize}
+2. Get the content creators who have a higher salary than the average salary of all content creators
+
 \begin{lstlisting}[caption={ Query 2},label={lst:q-2}]
     SELECT ContentCreator_Name
     FROM ContentCreator
@@ -40,9 +37,8 @@
 \end{figure}
 %%% 
 \clearpage
-\begin{itemize}
-    \item Retrieve the teams managed by managers who have won a championship
-\end{itemize}
+3. Retrieve the teams managed by managers who have won a championship
+
 \begin{lstlisting}[caption={ Query 3},label={lst:q-3}]
     SELECT Team_Name
     FROM Team

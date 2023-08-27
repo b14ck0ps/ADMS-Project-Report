@@ -1,9 +1,7 @@
 \section{Join Queries}
 \hrulefill
 
-\begin{itemize}
-    \item Get the team name and manager name for each team
-\end{itemize}
+1. Get the team name and manager name for each team
 
 \begin{lstlisting}[ caption={ Query 1},label={lst:q-1}]
     SELECT t.Team_Name, m.Manager_Name
@@ -16,9 +14,8 @@
     \caption{Result of Query 1}
 \end{figure}
 %%%
-\begin{itemize}
-    \item Retrieve the player name, team name, and country for each player
-\end{itemize}
+2. Retrieve the player name, team name, and country for each player
+
 \begin{lstlisting}[ caption={ Query 2},label={lst:q-2}]
     SELECT p.Player_Name, t.Team_Name, t.Team_Country
     FROM Player p
@@ -32,9 +29,8 @@
 \end{figure}
 %%%
 \clearpage
-\begin{itemize}
-    \item Get the content creator name, social media name, and email for each content creator
-\end{itemize}
+3.  Get the content creator name, social media name, and email for each content creator
+
 \begin{lstlisting}[ caption={ Query 3},label={lst:q-3}]
     SELECT cc.ContentCreator_Name, sm.SocialMedia_Name, sm.SocialMedia_Email
     FROM ContentCreator cc
