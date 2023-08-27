@@ -9,29 +9,32 @@
 
 
 \subsection*{\underline{1NF}}
-\begin{itemize}
+\begin{enumerate}
     \item (
           \underline{Tournament\_ID}, Tournament\_Name, Tournament\_StartingDate,Tournament\_EndingDate, Tournament\_Location, Tournament\_Prize\_Pool,
-          \underline{Game\_ID}, Game\_Name, Game\_Icon, Game\_ReleaseDate, Game\_Platform, Game\_PricePool, Game\_Genre, Game\_Publisher
-          )
-\end{itemize}
+          \underline{Game\_ID}, Game\_Name, Game\_Icon, Game\_ReleaseDate, Game\_Platform, Game\_PricePool, Game\_Genre, Game\_Publisher)
+\end{enumerate}
 
 
 \subsection*{\underline{2NF}}
-\begin{itemize}
-    \item \textbf{Tournament}(\underline{Tournament\_ID}, Tournament\_Name, Tournament\_StartingDate,Tournament\_EndingDate, Tournament\_Location, Tournament\_Prize\_Pool)
-    \item \textbf{Game}(\underline{Game\_ID}, Game\_Name, Game\_Icon, Game\_ReleaseDate, Game\_Platform, Game\_PricePool, Game\_Genre, Game\_Publisher)
-\end{itemize}
+\begin{enumerate}
+    \item (\underline{Tournament\_ID}, Tournament\_Name, Tournament\_StartingDate,Tournament\_EndingDate, Tournament\_Location, Tournament\_Prize\_Pool)
+    \item (\underline{Game\_ID}, Game\_Name, Game\_Icon, Game\_ReleaseDate, Game\_Platform, Game\_PricePool, Game\_Genre, Game\_Publisher)
+\end{enumerate}
 
 \subsection*{\underline{3NF}}
 No transitive dependency found.Same as 2NF.
+\begin{enumerate}
+    \item (\underline{Tournament\_ID}, Tournament\_Name, Tournament\_StartingDate,Tournament\_EndingDate, Tournament\_Location, Tournament\_Prize\_Pool)
+    \item (\underline{Game\_ID}, Game\_Name, Game\_Icon, Game\_ReleaseDate, Game\_Platform, Game\_PricePool, Game\_Genre, Game\_Publisher)
+\end{enumerate}
 
 \subsection*{\underline{Table after Normalization}}
-\begin{itemize}
-    \item \textbf{Tournament}(\underline{Tournament\_ID}, Tournament\_Name, Tournament\_StartingDate,Tournament\_EndingDate, Tournament\_Location, Tournament\_Prize\_Pool)
-    \item \textbf{Game}(\underline{Game\_ID}, Game\_Name, Game\_Icon, Game\_ReleaseDate, Game\_Platform, Game\_PricePool, Game\_Genre, Game\_Publisher)
-    \item \textbf{Tournament\_Game}(\underline{Tournament\_ID}, \underline{Game\_ID})
-\end{itemize}
+\begin{enumerate}
+    \item (\underline{Tournament\_ID}, Tournament\_Name, Tournament\_StartingDate,Tournament\_EndingDate, Tournament\_Location, Tournament\_Prize\_Pool)
+    \item (\underline{Game\_ID}, Game\_Name, Game\_Icon, Game\_ReleaseDate, Game\_Platform, Game\_PricePool, Game\_Genre, Game\_Publisher)
+    \item (\underline{Tournament\_ID}, \underline{Game\_ID})
+\end{enumerate}
 
 
 \clearpage

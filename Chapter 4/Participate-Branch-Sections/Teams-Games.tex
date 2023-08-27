@@ -8,26 +8,30 @@
 )
 
 \subsubsection*{\underline{1NF}}
-\begin{itemize}
+\begin{enumerate}
     \item (
           \underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Total\_Earning,\\Team\_Winnig,
           \underline{Game\_ID}, Game\_Name, Game\_Icon, Game\_ReleaseDate, Game\_Platform, Game\_PricePool, Game\_Genre, Game\_Publisher
           )
-\end{itemize}
+\end{enumerate}
 
 \subsubsection*{\underline{2NF}}
-\begin{itemize}
-    \item \textbf{Team}(\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Total\_Earning,\\Team\_Winnig)
-    \item \textbf{Game}(\underline{Game\_ID}, Game\_Name, Game\_Icon, Game\_ReleaseDate, Game\_Platform, Game\_PricePool, Game\_Genre, Game\_Publisher)
-\end{itemize}
+\begin{enumerate}
+    \item (\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Total\_Earning,\\Team\_Winnig)
+    \item (\underline{Game\_ID}, Game\_Name, Game\_Icon, Game\_ReleaseDate, Game\_Platform, Game\_PricePool, Game\_Genre, Game\_Publisher)
+\end{enumerate}
 
 \subsubsection*{\underline{3NF}}
 No transitive dependency found.Same as 2NF.
+\begin{enumerate}
+    \item (\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Total\_Earning,\\Team\_Winnig)
+    \item (\underline{Game\_ID}, Game\_Name, Game\_Icon, Game\_ReleaseDate, Game\_Platform, Game\_PricePool, Game\_Genre, Game\_Publisher)
+\end{enumerate}
 
 \subsubsection*{\underline{Table after Normalization}}
-\begin{itemize}
-    \item \textbf{Team}(\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Total\_Earning,\\Team\_Winnig)
-    \item \textbf{Game}(\underline{Game\_ID}, Game\_Name, Game\_Icon, Game\_ReleaseDate, Game\_Platform, Game\_PricePool, Game\_Genre, Game\_Publisher)
-    \item \textbf{Team\_Game}(\underline{Team\_ID}, \underline{Game\_ID})
-\end{itemize}
+\begin{enumerate}
+    \item (\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Total\_Earning,\\Team\_Winnig)
+    \item (\underline{Game\_ID}, Game\_Name, Game\_Icon, Game\_ReleaseDate, Game\_Platform, Game\_PricePool, Game\_Genre, Game\_Publisher)
+    \item (\underline{Team\_ID}, \underline{Game\_ID})
+\end{enumerate}
 \clearpage

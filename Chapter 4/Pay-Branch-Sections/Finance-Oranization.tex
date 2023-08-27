@@ -9,26 +9,30 @@
 Phone is multi-valued attribute.
 \vskip 0.2in
 
-\begin{itemize}
+\begin{enumerate}
     \item
           (\underline{Finance\_ID}, Finance\_Account\_Number, Finance\_Balance,\\
           \underline{Organization\_ID}, Organization\_Name, Organization\_Email, Organization\_Password, Organization\_Picture, Organization\_Phone)
-\end{itemize}
+\end{enumerate}
 
 \subsection*{\underline{2NF}}
-\begin{itemize}
-    \item \textbf{Finance}(\underline{Finance\_ID}, Finance\_Account\_Number, Finance\_Balance)
-    \item \textbf{Organization}(\underline{Organization\_ID}, Organization\_Name, Organization\_Email, Organization\_Password, Organization\_Picture, Organization\_Phone)
-\end{itemize}
+\begin{enumerate}
+    \item (\underline{Finance\_ID}, Finance\_Account\_Number, Finance\_Balance)
+    \item (\underline{Organization\_ID}, Organization\_Name, Organization\_Email, Organization\_Password, Organization\_Picture, Organization\_Phone)
+\end{enumerate}
 
 \subsection*{\underline{3NF}}
 No transitive dependency found.Same as 2NF.
+\begin{enumerate}
+    \item (\underline{Finance\_ID}, Finance\_Account\_Number, Finance\_Balance)
+    \item (\underline{Organization\_ID}, Organization\_Name, Organization\_Email, Organization\_Password, Organization\_Picture, Organization\_Phone)
+\end{enumerate}
 
 \subsection*{\underline{Table after Normalization}}
-\begin{itemize}
-    \item \textbf{Finance}(\underline{Finance\_ID}, Finance\_Account\_Number, Finance\_Balance)
-    \item \textbf{Organization}(\underline{Organization\_ID}, Organization\_Name, Organization\_Email, Organization\_Password, Organization\_Picture, Organization\_Phone, \textbf{Finance\_ID})
-    \item \textbf{Organization\_Phone} (\underline{Op\_ID}, \textbf{Organization\_ID},{Organization\_Phone})
-\end{itemize}
+\begin{enumerate}
+    \item (\underline{Finance\_ID}, Finance\_Account\_Number, Finance\_Balance)
+    \item (\underline{Organization\_ID}, Organization\_Name, Organization\_Email, Organization\_Password, Organization\_Picture, Organization\_Phone, \textbf{Finance\_ID})
+    \item  (\underline{Op\_ID}, \textbf{Organization\_ID},{Organization\_Phone})
+\end{enumerate}
 
 \clearpage

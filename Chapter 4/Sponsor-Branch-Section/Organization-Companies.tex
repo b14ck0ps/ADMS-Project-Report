@@ -7,27 +7,30 @@
 \subsection*{\underline{1NF}}
 phone is a multi-value attribute.
 
-\begin{itemize}
+\begin{enumerate}
     \item (\underline{Organization\_ID}, Organization\_Name, Organization\_Email, Organization\_Picture, Organization\_Phone, \underline{Company\_ID}, Company\_Name, Company\_Email, Company\_Picture, Company\_Phone, location)
-\end{itemize}
+\end{enumerate}
 
 \subsection*{\underline{2NF}}
-\begin{itemize}
-    \item \textbf{Organization}(\underline{Organization\_ID}, Organization\_Name, Organization\_Email, Organization\_Picture, Organization\_Phone, \underline{Company\_ID})
-    \item \textbf{Company}(\underline{Company\_ID}, Company\_Name, Company\_Email, Company\_Picture, Company\_Phone, location)
-\end{itemize}
+\begin{enumerate}
+    \item (\underline{Organization\_ID}, Organization\_Name, Organization\_Email, Organization\_Picture, Organization\_Phone, \underline{Company\_ID})
+    \item (\underline{Company\_ID}, Company\_Name, Company\_Email, Company\_Picture, Company\_Phone, location)
+\end{enumerate}
 
 \subsection*{\underline{3NF}}
 No transitive dependency found.Same as 2NF.
-
+\begin{enumerate}
+    \item (\underline{Organization\_ID}, Organization\_Name, Organization\_Email, Organization\_Picture, Organization\_Phone, \underline{Company\_ID})
+    \item (\underline{Company\_ID}, Company\_Name, Company\_Email, Company\_Picture, Company\_Phone, location)
+\end{enumerate}
 \subsection*{\underline{Table after Normalization}}
-\begin{itemize}
-    \item \textbf{Organization}(\underline{Organization\_ID}, Organization\_Name, Organization\_Email, Organization\_Picture, \underline{Company\_ID})
+\begin{enumerate}
+    \item (\underline{Organization\_ID}, Organization\_Name, Organization\_Email, Organization\_Picture, \underline{Company\_ID})
     \item \textbf{Organization\_Phone}(\underline{Organization\_ID}, Organization\_Phone)
-    \item \textbf{Company}(\underline{Company\_ID}, Company\_Name, Company\_Email, Company\_Picture, Company\_Phone, location)
-    \item \textbf{Company\_Phone}(\underline{Company\_ID}, Company\_Phone)
-    \item \textbf{Organization\_Company}(\underline{Organization\_ID}, \underline{Company\_ID})
-\end{itemize}
+    \item (\underline{Company\_ID}, Company\_Name, Company\_Email, Company\_Picture, Company\_Phone, location)
+    \item (\underline{Company\_ID}, Company\_Phone)
+    \item (\underline{Organization\_ID}, \underline{Company\_ID})
+\end{enumerate}
 
 
 

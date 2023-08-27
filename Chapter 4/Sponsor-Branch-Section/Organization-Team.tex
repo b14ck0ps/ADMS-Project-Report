@@ -3,36 +3,40 @@
 \subsection*{\underline{UNF}}
 
 (
-    \underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Total\_Earning,\\Team\_Winnig,
-    \underline{Company\_ID}, Company\_Name, Company\_Email, Company\_Password, Company\_Picture, Company\_Phone, Company\_location
+\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Total\_Earning,\\Team\_Winnig,
+\underline{Company\_ID}, Company\_Name, Company\_Email, Company\_Password, Company\_Picture, Company\_Phone, Company\_location
 )
 
 \subsection*{\underline{1NF}}
 Phone is multi-value attribute.
 
-\begin{itemize}
+\begin{enumerate}
     \item (
-        \underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Total\_Earning,\\Team\_Winnig,
-        \underline{Company\_ID}, Company\_Name, Company\_Email, Company\_Password, Company\_Picture, Company\_Phone, Company\_location
-    )
-\end{itemize}
+          \underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Total\_Earning,\\Team\_Winnig,
+          \underline{Company\_ID}, Company\_Name, Company\_Email, Company\_Password, Company\_Picture, Company\_Phone, Company\_location
+          )
+\end{enumerate}
 
 \subsection*{\underline{2NF}}
-\begin{itemize}
-    \item \textbf{Team}(\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Total\_Earning,\\Team\_Winnig
-    \item \textbf{Company}(\underline{Company\_ID}, Company\_Name, Company\_Email, Company\_Password, Company\_Picture, Company\_Phone, Company\_location)
-\end{itemize}
+\begin{enumerate}
+    \item (\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Total\_Earning,\\Team\_Winnig
+    \item (\underline{Company\_ID}, Company\_Name, Company\_Email, Company\_Password, Company\_Picture, Company\_Phone, Company\_location)
+\end{enumerate}
 
 \subsection*{\underline{3NF}}
 No transitive dependency found.Same as 2NF.
+\begin{enumerate}
+    \item (\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Total\_Earning,\\Team\_Winnig
+    \item (\underline{Company\_ID}, Company\_Name, Company\_Email, Company\_Password, Company\_Picture, Company\_Phone, Company\_location)
+\end{enumerate}
 
 \subsection*{\underline{Table after Normalization}}
-\begin{itemize}
-    \item \textbf{Team}(\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Total\_Earning,\\Team\_Winnig
-    \item \textbf{Company}(\underline{Company\_ID}, Company\_Name, Company\_Email, Company\_Password, Company\_Picture, Company\_Phone, Company\_location)
-    \item \textbf{Team\_Company}(\underline{Team\_ID}, \underline{Company\_ID})
-    \item \textbf{Company\_Phone}(\underline{Company\_ID}, Company\_Phone)
-\end{itemize}
+\begin{enumerate}
+    \item (\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Total\_Earning,\\Team\_Winnig
+    \item (\underline{Company\_ID}, Company\_Name, Company\_Email, Company\_Password, Company\_Picture, Company\_Phone, Company\_location)
+    \item (\underline{Team\_ID}, \underline{Company\_ID})
+    \item (\underline{Company\_ID}, Company\_Phone)
+\end{enumerate}
 
 
 \clearpage

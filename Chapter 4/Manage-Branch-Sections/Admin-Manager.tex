@@ -10,28 +10,32 @@
 Phone is multi-valued attribute.
 \vskip 0.2in
 
-\begin{itemize}
+\begin{enumerate}
     \item (\underline{Admin\_ID}, Admin\_Name, Admin\_Email, Admin\_Password, Admin\_Picture,\\
           \underline{Manager\_ID}, Manager\_Name, Manager\_Email, Manager\_Password,Manager\_Picture, Manager\_Hiredate, Manager\_Phone)
-\end{itemize}
+\end{enumerate}
 
 \subsection*{\underline{2NF}}
 \vskip 0.2in
 
-\begin{itemize}
+\begin{enumerate}
     \item \underline{Admin\_ID}, Admin\_Name, Admin\_Email, Admin\_Password, Admin\_Picture
     \item \underline{Manager\_ID}, Manager\_Name, Manager\_Email, Manager\_Password, Manager\_Picture, Manager\_Hiredate, Manager\_Phone
-\end{itemize}
+\end{enumerate}
 
 \subsection*{\underline{3NF}}
 No transitive dependencies found.Same as 2NF
+\begin{enumerate}
+    \item \underline{Admin\_ID}, Admin\_Name, Admin\_Email, Admin\_Password, Admin\_Picture
+    \item \underline{Manager\_ID}, Manager\_Name, Manager\_Email, Manager\_Password, Manager\_Picture, Manager\_Hiredate, Manager\_Phone
+\end{enumerate}
 
 \subsection*{\underline{Table after Normalization}}
 \vskip 0.2in
-\begin{itemize}
-    \item \textbf{Manager} (\underline{Manager\_ID}, Manager\_Name, Manager\_Email, Manager\_Password, Manager\_Picture, Manager\_Hiredate,\textbf{Admin\_ID})
-    \item \textbf{Admin} (\underline{Admin\_ID}, Admin\_Name, Admin\_Email, Admin\_Password, Admin\_Picture)
-    \item \textbf{Manager\_Phone} (\underline{Mp\_ID}, \textbf{Manager\_ID},{Manager\_Phone})
-\end{itemize}
+\begin{enumerate}
+    \item  (\underline{Manager\_ID}, Manager\_Name, Manager\_Email, Manager\_Password, Manager\_Picture, Manager\_Hiredate,\textbf{Admin\_ID})
+    \item  (\underline{Admin\_ID}, Admin\_Name, Admin\_Email, Admin\_Password, Admin\_Picture)
+    \item  (\underline{Mp\_ID}, \textbf{Manager\_ID},{Manager\_Phone})
+\end{enumerate}
 
 \clearpage

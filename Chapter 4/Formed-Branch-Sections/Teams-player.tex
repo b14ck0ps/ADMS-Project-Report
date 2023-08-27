@@ -13,41 +13,42 @@ Player\_Twitter\_Link,Player\_Youtube\_Link
 Phone \& Wining number are multi-valued attribute.
 \vskip 0.2in
 
-\begin{itemize}
+\begin{enumerate}
     \item
           (\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Total\_Earning,\\Team\_Winnig,
           \underline{Player\_ID}, Player\_Name, Player\_Email, Player\_Password, Player\_Picture, Player\_JoinDate, Player\_Phone, Player\_Salary, Player\_Winnig\_Money, Player\_Play\_Hours, Player\_country, Player\_City, Player\_Street, Player\_Zip\_Code, Player\_DOB,
           Player\_Facebook\_Link, Player\_Instagram\_Link,
           Player\_Twitter\_Link,Player\_Youtube\_Link
           )
-\end{itemize}
+\end{enumerate}
 
 \subsection*{\underline{2NF}}
-\begin{itemize}
-    \item \textbf{Team}(\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Total\_Earning,\\Team\_Winnig)
-    \item \textbf{Player}(\underline{Player\_ID}, Player\_Name, Player\_Email, Player\_Password, Player\_Picture, Player\_JoinDate, Player\_Salary, Player\_Winnig\_Money, Player\_Play\_Hours, Player\_country, Player\_City, Player\_Street, Player\_Zip\_Code, Player\_DOB, Player\_Facebook\_Link, Player\_Instagram\_Link, Player\_Twitter\_Link,Player\_Youtube\_Link)
-\end{itemize}
+\begin{enumerate}
+    \item (\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Total\_Earning,\\Team\_Winnig)
+    \item (\underline{Player\_ID}, Player\_Name, Player\_Email, Player\_Password, Player\_Picture, Player\_JoinDate, Player\_Salary, Player\_Winnig\_Money, Player\_Play\_Hours, Player\_country, Player\_City, Player\_Street, Player\_Zip\_Code, Player\_DOB, Player\_Facebook\_Link, Player\_Instagram\_Link, Player\_Twitter\_Link,Player\_Youtube\_Link)
+\end{enumerate}
 
 
 \subsection*{\underline{3NF}}
-\begin{itemize}
-    \item \textbf{Team}(\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Total\_Earning,\\Team\_Winnig)
-    \item \textbf{Player}(\underline{Player\_ID}, Player\_Name, Player\_Email, Player\_Password, Player\_Picture, Player\_JoinDate, Player\_Salary, Player\_Winnig\_Money, Player\_Play\_Hours, Player\_DOB)
-    \item \textbf{Player\_Address} (\underline{Pa\_ID}, \textbf{Player\_ID}, Player\_country, Player\_City, Player\_Street, Player\_Zip\_Code)
-    \item \textbf{Player\_Social\_Link} (\underline{Psl\_ID}, \textbf{Player\_ID}, Player\_Facebook\_Link, Player\_Instagram\_Link, Player\_Twitter\_Link,Player\_Youtube\_Link)
+\begin{enumerate}
+    \item (\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Total\_Earning,\\Team\_Winnig)
+    \item (\underline{Player\_ID}, Player\_Name, Player\_Email, Player\_Password, Player\_Picture, Player\_JoinDate, Player\_Salary, Player\_Winnig\_Money, Player\_Play\_Hours, Player\_DOB)
+    \item  (\underline{Pa\_ID}, \textbf{Player\_ID}, Player\_country, Player\_City, Player\_Street, Player\_Zip\_Code)
+    \item  (\underline{Psl\_ID}, \textbf{Player\_ID}, Player\_Facebook\_Link, Player\_Instagram\_Link, Player\_Twitter\_Link,Player\_Youtube\_Link)
 
-\end{itemize}
+\end{enumerate}
 
+\clearpage
 \subsection*{\underline{Table after Normalization}}
-\begin{itemize}
-    \item \textbf{Team}(\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Total\_Earning,\\Team\_Winnig)
-    \item \textbf{Player}(\underline{Player\_ID}, Player\_Name, Player\_Email, Player\_Password, Player\_Picture, Player\_JoinDate, Player\_Salary, Player\_Play\_Hours, Player\_DOB)
-    \item \textbf{Player\_Address} (\underline{Pa\_ID}, \textbf{Player\_ID}, Player\_country, Player\_City, Player\_Street, Player\_Zip\_Code)
-    \item \textbf{Player\_Social\_Link} (\underline{Psl\_ID}, \textbf{Player\_ID}, Player\_Facebook\_Link, Player\_Instagram\_Link, Player\_Twitter\_Link,Player\_Youtube\_Link)
-    \item \textbf{Player\_Phone} (\underline{Pp\_ID}, \textbf{Player\_ID}, Player\_Phone)
-    \item \textbf{Player\_Wining} (\underline{Pw\_ID}, \textbf{Player\_ID}, Player\_Winnig)
-    \item \textbf{Player\_Team} (\underline{Pt\_ID}, \textbf{Player\_ID}, \textbf{Team\_ID})
-\end{itemize}
+\begin{enumerate}
+    \item (\underline{Team\_ID}, Team\_Name,Team\_Icon, Team\_established\_date, Team\_country,Total\_Earning,\\Team\_Winnig)
+    \item (\underline{Player\_ID}, Player\_Name, Player\_Email, Player\_Password, Player\_Picture, Player\_JoinDate, Player\_Salary, Player\_Play\_Hours, Player\_DOB)
+    \item  (\underline{Pa\_ID}, \textbf{Player\_ID}, Player\_country, Player\_City, Player\_Street, Player\_Zip\_Code)
+    \item  (\underline{Psl\_ID}, \textbf{Player\_ID}, Player\_Facebook\_Link, Player\_Instagram\_Link, Player\_Twitter\_Link,Player\_Youtube\_Link)
+    \item  (\underline{Pp\_ID}, \textbf{Player\_ID}, Player\_Phone)
+    \item  (\underline{Pw\_ID}, \textbf{Player\_ID}, Player\_Winnig)
+    \item  (\underline{Pt\_ID}, \textbf{Player\_ID}, \textbf{Team\_ID})
+\end{enumerate}
 
 
 \clearpage
