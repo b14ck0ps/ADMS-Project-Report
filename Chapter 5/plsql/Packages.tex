@@ -1,0 +1,99 @@
+\clearpage
+\subsection{Package}
+\hrulefill
+
+
+1. Create a package to manage players. The package should contain the following procedures:
+
+\begin{lstlisting}[caption={ Query 1},label={lst:q-1}]
+    CREATE OR REPLACE PACKAGE player_management_pkg AS
+    PROCEDURE add_new_player(
+        p_name VARCHAR2,
+        p_email VARCHAR2,
+        p_dob DATE,
+        p_salary DECIMAL
+    );
+    
+    PROCEDURE update_player_salary(
+        p_player_id INT,
+        p_new_salary DECIMAL
+    );
+    
+    FUNCTION get_player_age(
+        p_player_id INT
+    ) RETURN INT;
+    
+    FUNCTION get_player_total_earnings(
+        p_player_id INT
+    ) RETURN DECIMAL;
+    
+    PROCEDURE remove_player(
+        p_player_id INT
+    );
+END player_management_pkg;
+/
+
+\end{lstlisting}
+
+
+2. Create a package to manage teams. The package should contain the following procedures:
+\begin{lstlisting}[caption={ Query 2},label={lst:q-2}]
+    CREATE OR REPLACE PACKAGE team_management_pkg AS
+    PROCEDURE update_team_name(
+        p_team_id INT,
+        p_new_name VARCHAR2
+    );
+    
+    PROCEDURE add_player_to_team(
+        p_player_id INT,
+        p_team_id INT
+    );
+    
+    FUNCTION get_team_member_count(
+        p_team_id INT
+    ) RETURN INT;
+    
+    PROCEDURE remove_player_from_team(
+        p_player_id INT,
+        p_team_id INT
+    );
+    
+    FUNCTION get_team_players(
+        p_team_id INT
+    ) RETURN SYS_REFCURSOR;
+END team_management_pkg;
+/
+\end{lstlisting}
+
+\clearpage
+3. Create a package to manage tournaments. The package should contain the following procedures:
+
+\begin{lstlisting}[caption={ Query 3},label={lst:q-3}]
+    CREATE OR REPLACE PACKAGE tournament_management_pkg AS
+    PROCEDURE create_new_tournament(
+        p_name VARCHAR2,
+        p_start_date DATE,
+        p_end_date DATE,
+        p_location VARCHAR2,
+        p_prize_pool DECIMAL
+    );
+    
+    PROCEDURE delete_tournament(
+        p_tournament_id INT
+    );
+    
+    FUNCTION get_tournament_prize_pool(
+        p_tournament_id INT
+    ) RETURN DECIMAL;
+    
+    FUNCTION get_tournament_winner(
+        p_tournament_id INT
+    ) RETURN VARCHAR2;
+    
+    PROCEDURE update_tournament_location(
+        p_tournament_id INT,
+        p_new_location VARCHAR2
+    );
+END tournament_management_pkg;
+/
+\end{lstlisting}

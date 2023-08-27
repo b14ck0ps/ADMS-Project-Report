@@ -1,0 +1,70 @@
+\clearpage
+\subsection{Cursors}
+\hrulefill
+
+1. Create a Players Cursor and show the details of all the players.
+
+\begin{lstlisting}[caption={ Query 1},label={lst:q-1}]
+    DECLARE
+    CURSOR player_cursor IS
+    SELECT Player_ID, Player_Name, Player_Email
+    FROM Player;
+    p_info player_cursor%ROWTYPE;
+BEGIN
+    OPEN player_cursor;
+    LOOP
+        FETCH player_cursor INTO p_info;
+        EXIT WHEN player_cursor%NOTFOUND;
+        DBMS_OUTPUT.PUT_LINE('Player ID: ' || p_info.Player_ID);
+        DBMS_OUTPUT.PUT_LINE('Player Name: ' || p_info.Player_Name);
+        DBMS_OUTPUT.PUT_LINE('Player Email: ' || p_info.Player_Email);
+    END LOOP;
+    CLOSE player_cursor;
+END;
+/
+
+\end{lstlisting}
+
+% Tournament Teams Cursor
+2. Create a Tournament Teams Cursor and show the details of all the teams in a tournament.
+
+\begin{lstlisting}[caption={ Query 2},label={lst:q-2}]
+    DECLARE
+    CURSOR team_cursor (p_tournament_id INT) IS
+    SELECT Team_ID, Team_Name, Team_Country
+    FROM Team
+    WHERE Team_ID IN (SELECT Team_ID FROM Player_Team WHERE Tournament_ID = p_tournament_id);
+    t_info team_cursor%ROWTYPE;
+BEGIN
+    FOR t_info IN team_cursor(1) -- Provide a tournament ID
+    LOOP
+        DBMS_OUTPUT.PUT_LINE('Team ID: ' || t_info.Team_ID);
+        DBMS_OUTPUT.PUT_LINE('Team Name: ' || t_info.Team_Name);
+        DBMS_OUTPUT.PUT_LINE('Team Country: ' || t_info.Team_Country);
+    END LOOP;
+END;
+/
+\end{lstlisting}
+
+% Organization Finance Cursor
+3. Create an Organization Finance Cursor and show the details of all the organizations and their finances.
+
+\begin{lstlisting}[caption={ Query 3},label={lst:q-3}]
+    DECLARE
+    CURSOR finance_cursor IS
+    SELECT o.Organization_Name, f.Finance_Balance
+    FROM Organization o
+    JOIN Finance f ON o.Finance_ID = f.Finance_ID;
+    fin_info finance_cursor%ROWTYPE;
+BEGIN
+    OPEN finance_cursor;
+    LOOP
+        FETCH finance_cursor INTO fin_info;
+        EXIT WHEN finance_cursor%NOTFOUND;
+        DBMS_OUTPUT.PUT_LINE('Organization Name: ' || fin_info.Organization_Name);
+        DBMS_OUTPUT.PUT_LINE('Finance Balance: ' || fin_info.Finance_Balance);
+    END LOOP;
+    CLOSE finance_cursor;
+END;
+/
+\end{lstlisting}

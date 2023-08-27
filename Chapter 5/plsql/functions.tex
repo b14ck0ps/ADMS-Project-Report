@@ -13,3 +13,31 @@ END;
 /
 
 \end{lstlisting}
+
+2. Get Team Member Count using a Function
+
+\begin{lstlisting}[caption={ Query 2},label={lst:q-2}]
+    CREATE OR REPLACE FUNCTION get_team_member_count(team_id INT) RETURN INT IS
+    member_count INT;
+BEGIN
+    SELECT COUNT(*) INTO member_count
+    FROM Player_Team
+    WHERE Team_ID = team_id;
+    RETURN member_count;
+END;
+/
+\end{lstlisting}
+
+3. Get Total Earnings using a Function
+\begin{lstlisting}[caption={ Query 3},label={lst:q-3}]
+    CREATE OR REPLACE FUNCTION get_total_earnings(player_id INT) RETURN DECIMAL IS
+    total_earnings DECIMAL(10, 2);
+BEGIN
+    SELECT SUM(Player_Winning) INTO total_earnings
+    FROM Player_Winning
+    WHERE Player_ID = player_id;
+    RETURN total_earnings;
+END;
+/
+
+\end{lstlisting}

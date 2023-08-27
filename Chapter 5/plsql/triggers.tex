@@ -1,0 +1,54 @@
+\clearpage
+\subsection{Triggers}
+\hrulefill
+
+1. Create a trigger to update the salary of a player when the player's play hours are updated.
+
+\begin{lstlisting}[caption={ Query 1},label={lst:q-1}]
+    CREATE OR REPLACE TRIGGER player_salary_update
+    BEFORE UPDATE ON Player
+    FOR EACH ROW
+    BEGIN
+        IF :NEW.Player_Salary < :OLD.Player_Salary THEN
+            RAISE_APPLICATION_ERROR(-20001, 'Salary decrease not allowed.');
+        END IF;
+    END;
+    /
+    
+\end{lstlisting}
+
+2. Create a trigger to update the prize pool of a tournament when the tournament's start date is updated.
+
+\begin{lstlisting}[caption={ Query 2},label={lst:q-2}]
+    CREATE OR REPLACE TRIGGER tournament_prize_pool_trigger
+BEFORE INSERT ON Tournament
+FOR EACH ROW
+BEGIN
+    IF :NEW.Tournament_Prize_Pool <= 0 THEN
+        :NEW.Tournament_Prize_Pool := NULL;
+    END IF;
+END;
+/
+\end{lstlisting}
+
+
+
+3. Create a trigger to update the team member limit of a team when the team's country is updated.
+
+\begin{lstlisting}[caption={ Query 3},label={lst:q-3}]
+    CREATE OR REPLACE TRIGGER team_member_limit_trigger
+BEFORE INSERT ON Player_Team
+FOR EACH ROW
+DECLARE
+    team_size INT;
+BEGIN
+    SELECT COUNT(*) INTO team_size
+    FROM Player_Team
+    WHERE Team_ID = :NEW.Team_ID;
+    
+    IF team_size >= 7 THEN
+        RAISE_APPLICATION_ERROR(-20002, 'Team member limit reached.');
+    END IF;
+END;
+/
+\end{lstlisting}
