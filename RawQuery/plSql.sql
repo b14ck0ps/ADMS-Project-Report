@@ -206,20 +206,22 @@ BEGIN
 END;
 /
 
---Tournament Teams Cursor
+-- retrieve the names and emails of all administrators 
 DECLARE
-    CURSOR team_cursor (p_tournament_id INT) IS
-    SELECT Team_ID, Team_Name, Team_Country
-    FROM Team
-    WHERE Team_ID IN (SELECT Team_ID FROM Player_Team WHERE Tournament_ID = p_tournament_id);
-    t_info team_cursor%ROWTYPE;
+    CURSOR admin_cursor IS
+    SELECT Admin_Name, Admin_Email
+    FROM Admin;
+    
+    admin_rec admin_cursor%ROWTYPE;
 BEGIN
-    FOR t_info IN team_cursor(1) -- Provide a tournament ID
+    OPEN admin_cursor;
     LOOP
-        DBMS_OUTPUT.PUT_LINE('Team ID: ' || t_info.Team_ID);
-        DBMS_OUTPUT.PUT_LINE('Team Name: ' || t_info.Team_Name);
-        DBMS_OUTPUT.PUT_LINE('Team Country: ' || t_info.Team_Country);
+        FETCH admin_cursor INTO admin_rec;
+        EXIT WHEN admin_cursor%NOTFOUND;
+        DBMS_OUTPUT.PUT_LINE('Admin Name: ' || admin_rec.Admin_Name);
+        DBMS_OUTPUT.PUT_LINE('Admin Email: ' || admin_rec.Admin_Email);
     END LOOP;
+    CLOSE admin_cursor;
 END;
 /
 

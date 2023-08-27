@@ -25,27 +25,40 @@ END;
 
 \end{lstlisting}
 
-% Tournament Teams Cursor
-2. Create a Tournament Teams Cursor and show the details of all the teams in a tournament.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/plsql/cursor/Player Cursor.png}
+    \caption{Result of Query 1}
+\end{figure}
+
+% retrieve the names and emails of all administrators 
+2. Create an Admin Cursor and show the details of all the administrators.
 
 \begin{lstlisting}[caption={ Query 2},label={lst:q-2}]
     DECLARE
-    CURSOR team_cursor (p_tournament_id INT) IS
-    SELECT Team_ID, Team_Name, Team_Country
-    FROM Team
-    WHERE Team_ID IN (SELECT Team_ID FROM Player_Team WHERE Tournament_ID = p_tournament_id);
-    t_info team_cursor%ROWTYPE;
+    CURSOR admin_cursor IS
+    SELECT Admin_Name, Admin_Email
+    FROM Admin;
+    
+    admin_rec admin_cursor%ROWTYPE;
 BEGIN
-    FOR t_info IN team_cursor(1) -- Provide a tournament ID
+    OPEN admin_cursor;
     LOOP
-        DBMS_OUTPUT.PUT_LINE('Team ID: ' || t_info.Team_ID);
-        DBMS_OUTPUT.PUT_LINE('Team Name: ' || t_info.Team_Name);
-        DBMS_OUTPUT.PUT_LINE('Team Country: ' || t_info.Team_Country);
+        FETCH admin_cursor INTO admin_rec;
+        EXIT WHEN admin_cursor%NOTFOUND;
+        DBMS_OUTPUT.PUT_LINE('Admin Name: ' || admin_rec.Admin_Name);
+        DBMS_OUTPUT.PUT_LINE('Admin Email: ' || admin_rec.Admin_Email);
     END LOOP;
+    CLOSE admin_cursor;
 END;
 /
 \end{lstlisting}
-
+\clearpage
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/plsql/cursor/Admin Cursor.png}
+    \caption{Result of Query 2}
+\end{figure}
 % Organization Finance Cursor
 3. Create an Organization Finance Cursor and show the details of all the organizations and their finances.
 
@@ -68,3 +81,8 @@ BEGIN
 END;
 /
 \end{lstlisting}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/plsql/cursor/Organization Finance Cursor.png}
+    \caption{Result of Query 3}
+\end{figure}
